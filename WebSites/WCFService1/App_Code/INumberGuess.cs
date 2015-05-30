@@ -10,9 +10,9 @@ using System.Text;
 public interface INumberGuess
 {
 
-	[OperationContract]
+	[WebGet(ResponseFormat = WebMessageFormat.Xml)]
     int SecretNumber(int lower, int upper);
 
-	[OperationContract]
+    [WebGet(ResponseFormat = WebMessageFormat.Xml)]
     string checkNumber(int userNum, int SecretNum);
 }
