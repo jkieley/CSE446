@@ -133,9 +133,9 @@
             this.attemptsLabel.AutoSize = true;
             this.attemptsLabel.Location = new System.Drawing.Point(334, 101);
             this.attemptsLabel.Name = "attemptsLabel";
-            this.attemptsLabel.Size = new System.Drawing.Size(63, 13);
+            this.attemptsLabel.Size = new System.Drawing.Size(101, 13);
             this.attemptsLabel.TabIndex = 10;
-            this.attemptsLabel.Text = "Attempts - 0";
+            this.attemptsLabel.Text = "Generate a number!";
             // 
             // Form1
             // 
