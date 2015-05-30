@@ -24,7 +24,29 @@ namespace NumberGuessingConsoleGame
             Console.WriteLine(" \\____|\\__,_|\\___||___/___/_|_| |_|\\__, |  \\____|\\__,_|_| |_| |_|\\___|");
             Console.WriteLine("                                   |___/                              ");
             Console.WriteLine("**********************************************************************");
-            Console.ReadLine();
+            int lowerLimit = takeInput("Enter a Lower Limit:");
+            int upperLmiit = takeInput("Enter an Upper Limit:");
+
+            int secretNumber
+
+            Console.WriteLine("You entered!: " + lowerLimit + " " + upperLmiit);
+            takeInput("");
         }
+
+        private static int takeInput(String msg) {
+            try {
+                    Console.WriteLine(msg);
+                    string userInput = Console.ReadLine();
+                    if(userInput.Equals("")){
+                        throw new System.FormatException();
+                    }else{
+                        return int.Parse(userInput);
+                    }
+                }catch(System.FormatException){
+                return takeInput("Invalid Input, try again...");
+            }
+
+        }
+
     }
 }

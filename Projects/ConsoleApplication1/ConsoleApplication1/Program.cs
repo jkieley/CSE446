@@ -46,7 +46,7 @@ namespace SelfHostingService
             // (2) a new ServiceHost instance to host the service
             ServiceHost selfHost = new ServiceHost(typeof(NumberGuessService), baseAddress); // with address
             try { // (3) Add a service endpoint with contract and binding
-                selfHost.AddServiceEndpoint(typeof(INumberGuessService), new WSHttpBinding(), "myService"); // (4) Add metadata for platform-independent access.
+                selfHost.AddServiceEndpoint(typeof(INumberGuessService), new WSHttpBinding(), "NumberGuessService"); // (4) Add metadata for platform-independent access.
                 System.ServiceModel.Description.ServiceMetadataBehavior smb = new System.ServiceModel.Description.ServiceMetadataBehavior();
                 smb.HttpGetEnabled = true; // enable the metadata
                 selfHost.Description.Behaviors.Add(smb); // Add here
