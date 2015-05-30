@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFService1", "http://localhost:1000", "{D05A2194-8BC3-4DA6-8FB6-34C66E58501B}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFService1(1)", "http://localhost:1000", "{D05A2194-8BC3-4DA6-8FB6-34C66E58501B}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
@@ -27,6 +27,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFService1", "http://local
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{C70B7652-965E-4D14-9624-BE55E76D2E18}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D05A2194-8BC3-4DA6-8FB6-34C66E58501B} = {D05A2194-8BC3-4DA6-8FB6-34C66E58501B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
