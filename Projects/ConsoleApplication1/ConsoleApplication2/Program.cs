@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System;
+using System.ServiceModel;
 
 namespace NumberGuessingConsoleGame
 {
@@ -10,6 +12,9 @@ namespace NumberGuessingConsoleGame
     {
         static void Main(string[] args)
         {
+            //(1) Create a proxy to the WCF service.
+            NumberGuessServiceClient client = new NumberGuessServiceClient();
+
             Console.WriteLine("**********************************************************************");
             Console.WriteLine(" _   _                 _               ");
             Console.WriteLine("| \\ | |_   _ _ __ ___ | |__   ___ _ __ ");
@@ -25,11 +30,14 @@ namespace NumberGuessingConsoleGame
             Console.WriteLine("                                   |___/                              ");
             Console.WriteLine("**********************************************************************");
             int lowerLimit = takeInput("Enter a Lower Limit:");
-            int upperLmiit = takeInput("Enter an Upper Limit:");
+            int upperLimit = takeInput("Enter an Upper Limit:");
 
-            int secretNumber
+            int secretNumber = client.SecretNumber(lowerLimit, upperLimit);
+            Console.WriteLine("A Secret Number has been generated between " + lowerLimit.ToString() + " and " + upperLimit.ToString());
+            int guess = takeInput("What number would you like to guess?");
 
-            Console.WriteLine("You entered!: " + lowerLimit + " " + upperLmiit);
+
+            Console.WriteLine("You entered!: " + lowerLimit + " " + upperLimit);
             takeInput("");
         }
 
