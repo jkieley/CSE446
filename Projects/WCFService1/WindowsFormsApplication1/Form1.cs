@@ -55,5 +55,19 @@ namespace WindowsFormsApplication1
             return msg + "  Attempts - " + attemptCount.ToString(); 
         }
 
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            try{
+                int userGuess = int.Parse(makeAGuessInput.Text);
+                string output = client.checkNumber(userGuess, secretNumber);
+                attemptCount++;
+                attemptsLabel.Text = addAttemptsString(output);
+            }
+            catch (System.FormatException){
+                attemptsLabel.Text = addAttemptsString("Invalid Input");
+                // do nothing
+            }
+        }
+
     }
 }
