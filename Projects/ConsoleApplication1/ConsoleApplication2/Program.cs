@@ -29,32 +29,52 @@ namespace NumberGuessingConsoleGame
             Console.WriteLine(" \\____|\\__,_|\\___||___/___/_|_| |_|\\__, |  \\____|\\__,_|_| |_| |_|\\___|");
             Console.WriteLine("                                   |___/                              ");
             Console.WriteLine("**********************************************************************");
-            int lowerLimit = takeInput("Enter a Lower Limit:");
-            int upperLimit = takeInput("Enter an Upper Limit:");
+            int lowerLimit = takeNumberInput("Enter a Lower Limit:");
+            int upperLimit = takeNumberInput("Enter an Upper Limit:");
 
             int secretNumber = client.SecretNumber(lowerLimit, upperLimit);
             Console.WriteLine("A Secret Number has been generated between " + lowerLimit.ToString() + " and " + upperLimit.ToString());
-            
-            int guess = takeInput("What number would you like to guess?");
-            string output = client.checkNumber(guess, secretNumber);
-            Console.WriteLine(output);
-            takeInput("");
+
+            int guessCount = 0;
+            string output = "";
+            bool cont = true;
+            while (cont)
+            {
+                int guess = takeNumberInput("What number would you like to guess?");
+                output = client.checkNumber(guess, secretNumber);
+                cont = !output.ToLower().Contains("correct");
+                guessCount++;
+                buildAttemptOutput(output, guessCount,cont);
+            }
+
+            Console.WriteLine("\n\nPress <return> to exit.");
+            Console.ReadLine();
             
         }
 
-        private static int takeInput(String msg) {
+        private static int takeNumberInput(String msg) {
             try {
-                    Console.WriteLine(msg);
-                    string userInput = Console.ReadLine();
-                    if(userInput.Equals("")){
-                        throw new System.FormatException();
-                    }else{
-                        return int.Parse(userInput);
-                    }
-                }catch(System.FormatException){
-                return takeInput("Invalid Input, try again...");
+                Console.WriteLine(msg);
+                string userInput = Console.ReadLine();
+                if(userInput.Equals("")){
+                    throw new System.FormatException();
+                }else{
+                    return int.Parse(userInput);
+                }
+            }catch(System.FormatException){
+                return takeNumberInput("Invalid Input, try again...");
+            }
+        }
+
+        private static void buildAttemptOutput(string msg,int count, bool tryAgain){
+            string output = "";
+            if (tryAgain) {
+                output += msg+" - Try Again! - "+" Attempts - "+count.ToString();
+            } else {
+                output += msg + " Attempts - " + count.ToString();
             }
 
+            Console.WriteLine(output);
         }
 
     }
