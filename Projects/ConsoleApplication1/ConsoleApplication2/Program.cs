@@ -34,11 +34,12 @@ namespace NumberGuessingConsoleGame
 
             int secretNumber = client.SecretNumber(lowerLimit, upperLimit);
             Console.WriteLine("A Secret Number has been generated between " + lowerLimit.ToString() + " and " + upperLimit.ToString());
+            
             int guess = takeInput("What number would you like to guess?");
-
-
-            Console.WriteLine("You entered!: " + lowerLimit + " " + upperLimit);
+            string output = client.checkNumber(guess, secretNumber);
+            Console.WriteLine(output);
             takeInput("");
+            
         }
 
         private static int takeInput(String msg) {
