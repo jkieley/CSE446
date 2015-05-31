@@ -46,6 +46,7 @@ namespace WebApplication2
 
             // Store the parse response in the session
             Session["secretNum"] = generatedNum;
+            outputLabel.Text = "A Number has been generated, Start guessing!";
 
 
         }
