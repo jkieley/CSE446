@@ -13,5 +13,10 @@ namespace WebApplication2
         {
 
         }
+
+        protected void generateNumber_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
