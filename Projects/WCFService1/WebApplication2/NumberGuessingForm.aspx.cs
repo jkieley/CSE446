@@ -17,6 +17,19 @@ namespace WebApplication2
         protected void generateNumber_Click(object sender, EventArgs e)
         {
 
+            int lower = 0;
+            int upper = 0;
+
+            Uri baseUri = new Uri("http://localhost:1000/Service.svc");
+            UriTemplate template = new UriTemplate("SecretNumber/{lower}/{upper}");
+            Uri completeUri = template.BindByPosition(baseUri, new string[] { lower.ToString(), upper.ToString() });
+
+
+        }
+
+        protected void play_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

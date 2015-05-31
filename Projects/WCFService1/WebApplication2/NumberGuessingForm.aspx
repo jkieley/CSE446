@@ -11,7 +11,7 @@
         }
 
         .input-group input {
-            width: 100px !important;
+            width: 100px;
         }
 
         .row {
@@ -30,20 +30,20 @@
         <div class="row">
              <div class="input-group">
                 <label for="lowerLimit">Lower Limit</label>
-                <asp:TextBox ID="lowerLimit" Width="300" runat="server"/>
+                <asp:TextBox ID="lowerLimit" runat="server"/>
             </div>
             <div class="input-group">
                 <label for="upperLimit">Upper Limit</label>
-                <asp:TextBox ID="upperLimit" Width="300" runat="server"/>
+                <asp:TextBox ID="upperLimit" runat="server"/>
             </div>
             <asp:Button ID="generateNumber" Text="Generate Secret Number" runat="server" OnClick="generateNumber_Click" />
         </div>
         <div class="row">
             <div class="input-group">
                 <label for="guess">Make a Guess</label>
-                <asp:TextBox ID="guess" Width="300" runat="server"/>
+                <asp:TextBox ID="guess" runat="server"/>
             </div>
-            <asp:Button ID="play" Text="Play" runat="server"/>
+            <asp:Button ID="play" Text="Play" runat="server" OnClick="play_Click"/>
             <asp:Label ID="outputLabel" Text="Generate a Number" runat="server" />
         </div>
     </div>
