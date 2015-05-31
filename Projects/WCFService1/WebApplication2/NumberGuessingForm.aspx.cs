@@ -14,11 +14,9 @@ namespace WebApplication2
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        private int attemptCount = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void generateNumber_Click(object sender, EventArgs e)
@@ -82,10 +80,27 @@ namespace WebApplication2
             MatchCollection matches = numRegex.Matches(response);
             string outputString = matches[0].Groups[1].Value;
 
-            // Store the parse response in the session
-            Session["secretNum"] = generatedNum;
+            //Display result 
+            int incrementedValue = Convert.ToInt32(Session["attemptCount"] == null ? 0 : Session["attemptCount"]) + 1;
+            Session["attemptCount"] = incrementedValue;
+            outputLabel.Text = buildAttemptOutput(outputString, incrementedValue, !outputString.ToLower().Contains("correct"));
 
 
+        }
+
+        private string buildAttemptOutput(string msg, int count, bool tryAgain)
+        {
+            string output = "";
+            if (tryAgain)
+            {
+                output += msg + " - Try Again! - " + " Attempts - " + count.ToString();
+            }
+            else
+            {
+                output += msg + " Attempts - " + count.ToString();
+            }
+
+            return output;
         }
 
     }
