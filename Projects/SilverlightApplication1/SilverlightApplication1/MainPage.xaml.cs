@@ -17,6 +17,8 @@ namespace SilverlightApplication1
     public partial class MainPage : UserControl
     {
         int secretNumber = 0;
+        int attemptCount = 0;
+
         bool secretNumberSet = false;
 
         public MainPage()
@@ -56,6 +58,46 @@ namespace SilverlightApplication1
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
 
+            if (!secretNumberSet) {
+                attemptLabel.Content = "You need to generate a number first";
+            }
+
+            int guess = 0;
+            try
+            {
+                guess = int.Parse(guessInput.Text);
+            }
+            catch (System.FormatException)
+            {
+                attemptLabel.Content = "Invalid Format, Try Again!";
+                return;
+            }
+            Uri uri = new Uri("http://venus.eas.asu.edu/WSRepository/Services/NumberGuessRest/Service.svc/checkNumber?userNum=" + guess.ToString() + "&secretNum=" + secretNumber.ToString());
+            WebClient proxy = new WebClient();
+            proxy.DownloadStringCompleted += new DownloadStringCompletedEventHandler(updateOutput);
+            proxy.DownloadStringAsync(uri);
+        }
+
+        private void updateOutput(object sender, DownloadStringCompletedEventArgs e)
+        {
+            string response = e.Result;
+            attemptCount++;
+            attemptLabel.Content = buildAttemptOutput(response, attemptCount, !response.ToLower().Contains("correct"));
+        }
+
+        private string buildAttemptOutput(string msg, int count, bool tryAgain)
+        {
+            string output = "";
+            if (tryAgain)
+            {
+                output += msg + " - Try Again! - " + " Attempts - " + count.ToString();
+            }
+            else
+            {
+                output += msg + " Attempts - " + count.ToString();
+            }
+
+            return output;
         }
     }
 }
