@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net;
 
 namespace WebApplication2
 {
@@ -16,13 +17,21 @@ namespace WebApplication2
 
         protected void generateNumber_Click(object sender, EventArgs e)
         {
-
             int lower = 0;
             int upper = 0;
+            try
+            {
+                lower = int.Parse(lowerLimit.Text);
+                upper = int.Parse(upperLimit.Text);
+            }catch(System.FormatException){
+                outputLabel.Text = "Invalid Format, Try Again!";
+                return;
+            }
 
-            Uri baseUri = new Uri("http://localhost:1000/Service.svc");
-            UriTemplate template = new UriTemplate("SecretNumber/{lower}/{upper}");
-            Uri completeUri = template.BindByPosition(baseUri, new string[] { lower.ToString(), upper.ToString() });
+            Uri uri = new Uri("http://localhost:1000/Service.svc/SecretNumber?lower="+lower.ToString()+"&upper="+upper.ToString());
+            WebClient proxy = new WebClient();
+            string response = proxy.DownloadString(uri);
+            Console.WriteLine(response);
 
 
         }
