@@ -5,6 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net;
+using System.Xml.Serialization;
+using System.Xml;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace WebApplication2
 {
@@ -31,7 +35,12 @@ namespace WebApplication2
             Uri uri = new Uri("http://localhost:1000/Service.svc/SecretNumber?lower="+lower.ToString()+"&upper="+upper.ToString());
             WebClient proxy = new WebClient();
             string response = proxy.DownloadString(uri);
-            Console.WriteLine(response);
+            Regex numRegex = new Regex(">(.+?)<", RegexOptions.IgnoreCase);
+            
+            MatchCollection matches = numRegex.Matches(response);
+            int generatedNum = int.Parse(matches[0].Groups[1].Value);
+
+            Session["secretNum"] = generatedNum;
 
 
         }
