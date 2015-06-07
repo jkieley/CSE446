@@ -92,23 +92,25 @@
     <Sequence DisplayName="Code Activity Sequence" sap2010:WorkflowViewState.IdRef="Sequence_1">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="lowerLimitInput" />
+        <Variable x:TypeArguments="x:String" Name="upperLimitInput" />
+        <Variable x:TypeArguments="x:String" Name="secretNumber" />
       </Sequence.Variables>
-      <local:CodeActivity1 Text="{x:Null}" sap2010:WorkflowViewState.IdRef="CodeActivity1_1">
-        <local:CodeActivity1.outArg>
+      <local:SetLowerLimit Text="{x:Null}" sap2010:WorkflowViewState.IdRef="CodeActivity1_1">
+        <local:SetLowerLimit.outArg>
           <OutArgument x:TypeArguments="x:String">
             <mca:CSharpReference x:TypeArguments="x:String">lowerLimitInput</mca:CSharpReference>
           </OutArgument>
-        </local:CodeActivity1.outArg>
-      </local:CodeActivity1>
-      <local:CodeActivity2 sap2010:WorkflowViewState.IdRef="CodeActivity2_1">
-        <local:CodeActivity2.Text>
+        </local:SetLowerLimit.outArg>
+      </local:SetLowerLimit>
+      <local:SetUpperLimit sap2010:WorkflowViewState.IdRef="CodeActivity2_1">
+        <local:SetUpperLimit.Text>
           <InArgument x:TypeArguments="x:String">
             <mca:CSharpValue x:TypeArguments="x:String">lowerLimitInput</mca:CSharpValue>
           </InArgument>
-        </local:CodeActivity2.Text>
-      </local:CodeActivity2>
+        </local:SetUpperLimit.Text>
+      </local:SetUpperLimit>
     </Sequence>
-    <sads:DebugSymbol.Symbol>d4IBQzpcVXNlcnNcamFtZXMua2llbGV5XERvY3VtZW50c1xWaXN1YWwgU3R1ZGlvIDIwMTNcUHJvamVjdHNcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb24xXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxXb3JrZmxvdzEueGFtbCMrA3AOAgEBLAVbEAIBC1wFbhACAQItBy2QAQIBLS4HLnECASsvBzMTAgEoNAc4EwIBJTkHPRMCASI+B0ITAgEfQwdHEwIBHUgHSJABAgEbSQdJkAECARlKB04TAgEWTwdTEwIBE1QHWBMCARBZB1mRAQIBDloHWpEBAgEMYAdmHQIBB2cHbR0CAQMtRS2NAQIBLi5FLm4CASwxCzGIAQIBKTYLNosBAgEmOws7iAECASNAC0CKAQIBIEULRToCAR5IRUiNAQIBHElFSY0BAgEaTAtMqgECARdRC1GpAQIBFFYLVq0BAgERWUZZjgECAQ9aRlqOAQIBDWMNY2ICAQhqDWpaAgEE</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d4IBQzpcVXNlcnNcamFtZXMua2llbGV5XERvY3VtZW50c1xWaXN1YWwgU3R1ZGlvIDIwMTNcUHJvamVjdHNcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb24xXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxXb3JrZmxvdzEueGFtbCMrA3IOAgEBLAVbEAIBD1wFcBACAQItBy2QAQIBMS4HLnECAS8vBzMTAgEsNAc4EwIBKTkHPRMCASY+B0ITAgEjQwdHEwIBIUgHSJABAgEfSQdJkAECAR1KB04TAgEaTwdTEwIBF1QHWBMCARRZB1mRAQIBEloHWpEBAgEQYgdoHQIBCWkHbx0CAQMtRS2NAQIBMi5FLm4CATAxCzGIAQIBLTYLNosBAgEqOws7iAECASdAC0CKAQIBJEULRToCASJIRUiNAQIBIElFSY0BAgEeTAtMqgECARtRC1GpAQIBGFYLVq0BAgEVWUZZjgECARNaRlqOAQIBEWUNZWICAQpsDWxaAgEE</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>

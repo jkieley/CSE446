@@ -7,11 +7,10 @@ using System.Activities;
 namespace WorkflowConsoleApplication1
 {
 
-    public sealed class CodeActivity1 : CodeActivity
+    public sealed class SetUpperLimit : CodeActivity
     {
         // Define an activity input argument of type string
         public InArgument<string> Text { get; set; }
-        public OutArgument<string> outArg { get; set; }
 
         // If your activity returns a value, derive from CodeActivity<TResult>
         // and return the value from the Execute method.
@@ -19,9 +18,10 @@ namespace WorkflowConsoleApplication1
         {
             // Obtain the runtime value of the Text input argument
             string text = context.GetValue(this.Text);
-            string input = Console.ReadLine();
-            //context.SetValue("lowerLimitInput", input);
-            outArg.Set(context, input);
+            Console.WriteLine("This was your input: " + text);
+            Console.ReadLine();
+
+            //Console.WriteLine(context.);
         }
     }
 }
