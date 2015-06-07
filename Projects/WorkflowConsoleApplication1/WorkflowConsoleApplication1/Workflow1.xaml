@@ -1,13 +1,19 @@
-﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="WorkflowConsoleApplication1.Workflow1" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="WorkflowConsoleApplication1.Workflow1_1"
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="WorkflowConsoleApplication1.Workflow1"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:local="clr-namespace:WorkflowConsoleApplication1"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
  xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
  xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
  xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="outArg" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>WorkflowConsoleApplication1.Workflow1_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System</x:String>
@@ -34,32 +40,116 @@
       <AssemblyReference>WorkflowConsoleApplication1</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
-    <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="This is a test" />
-    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
-      <local:CodeActivity1 Text="{x:Null}" sap2010:WorkflowViewState.IdRef="CodeActivity1_1" />
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="Print Large Welcome" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="**********************************************************************" />
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_2" Text=" _   _                 _               " />
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_3">
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" xml:space="preserve">"| \\ | |_   _ _ __ ___ | |__   ___ _ __ "</mca:CSharpValue>
+        </InArgument>
+      </WriteLine>
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_4">
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" xml:space="preserve">"|  \\| | | | | '_ ` _ \\| '_ \\ / _ \\ '__|"</mca:CSharpValue>
+        </InArgument>
+      </WriteLine>
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_5">
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" xml:space="preserve">"| |\\  | |_| | | | | | | |_) |  __/ |   "</mca:CSharpValue>
+        </InArgument>
+      </WriteLine>
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_6">
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" xml:space="preserve">"|_| \\_|\\__,_|_| |_| |_|_.__/ \\___|_|   "</mca:CSharpValue>
+        </InArgument>
+      </WriteLine>
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_7">
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </WriteLine>
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="  ____                     _                ____                      " />
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_9" Text=" / ___|_   _  ___  ___ ___(_)_ __   __ _   / ___| __ _ _ __ ___   ___ " />
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_10">
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" xml:space="preserve">"| |  _| | | |/ _ \\/ __/ __| | '_ \\ / _` | | |  _ / _` | '_ ` _ \\ / _ \\"</mca:CSharpValue>
+        </InArgument>
+      </WriteLine>
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_11">
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" xml:space="preserve">"| |_| | |_| |  __/\\__ \\__ \\ | | | | (_| | | |_| | (_| | | | | | |  __/"</mca:CSharpValue>
+        </InArgument>
+      </WriteLine>
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_12">
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" xml:space="preserve">" \\____|\\__,_|\\___||___/___/_|_| |_|\\__, |  \\____|\\__,_|_| |_| |_|\\___|"</mca:CSharpValue>
+        </InArgument>
+      </WriteLine>
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="                                   |___/                              " />
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_14" Text="**********************************************************************" />
     </Sequence>
-    <sads:DebugSymbol.Symbol>d4IBYzpcdXNlcnNcamFtZXMua2llbGV5XGRvY3VtZW50c1x2aXN1YWwgc3R1ZGlvIDIwMTNcUHJvamVjdHNcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb24xXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxXb3JrZmxvdzEueGFtbAUlAysOAgEBJgUmVgIBBCcFKRACAQImQyZTAgEFKAcoYAIBAw==</sads:DebugSymbol.Symbol>
+    <Sequence DisplayName="Code Activity Sequence" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="lowerLimitInput" />
+      </Sequence.Variables>
+      <local:CodeActivity1 Text="{x:Null}" sap2010:WorkflowViewState.IdRef="CodeActivity1_1">
+        <local:CodeActivity1.outArg>
+          <OutArgument x:TypeArguments="x:String">
+            <mca:CSharpReference x:TypeArguments="x:String">lowerLimitInput</mca:CSharpReference>
+          </OutArgument>
+        </local:CodeActivity1.outArg>
+      </local:CodeActivity1>
+      <local:CodeActivity2 sap2010:WorkflowViewState.IdRef="CodeActivity2_1">
+        <local:CodeActivity2.Text>
+          <InArgument x:TypeArguments="x:String">
+            <mca:CSharpValue x:TypeArguments="x:String">lowerLimitInput</mca:CSharpValue>
+          </InArgument>
+        </local:CodeActivity2.Text>
+      </local:CodeActivity2>
+    </Sequence>
+    <sads:DebugSymbol.Symbol>d4IBQzpcVXNlcnNcamFtZXMua2llbGV5XERvY3VtZW50c1xWaXN1YWwgU3R1ZGlvIDIwMTNcUHJvamVjdHNcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb24xXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxXb3JrZmxvdzEueGFtbCMrA3AOAgEBLAVbEAIBC1wFbhACAQItBy2QAQIBLS4HLnECASsvBzMTAgEoNAc4EwIBJTkHPRMCASI+B0ITAgEfQwdHEwIBHUgHSJABAgEbSQdJkAECARlKB04TAgEWTwdTEwIBE1QHWBMCARBZB1mRAQIBDloHWpEBAgEMYAdmHQIBB2cHbR0CAQMtRS2NAQIBLi5FLm4CASwxCzGIAQIBKTYLNosBAgEmOws7iAECASNAC0CKAQIBIEULRToCAR5IRUiNAQIBHElFSY0BAgEaTAtMqgECARdRC1GpAQIBFFYLVq0BAgERWUZZjgECAQ9aRlqOAQIBDWMNY2ICAQhqDWpaAgEE</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="222,62" />
+      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="WriteLine_2" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="WriteLine_3" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="WriteLine_4" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="WriteLine_5" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="WriteLine_6" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="WriteLine_7" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="WriteLine_8" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="WriteLine_9" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="WriteLine_10" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="WriteLine_11" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="WriteLine_12" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="WriteLine_13" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="WriteLine_14" sap:VirtualizedContainerService.HintSize="211,62" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="233,1512">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="CodeActivity1_1" sap:VirtualizedContainerService.HintSize="200,22" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="222,146">
+      <sap2010:ViewStateData Id="CodeActivity2_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="233,208">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="244,372">
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="255,1884">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="WorkflowConsoleApplication1.Workflow1_1" sap:VirtualizedContainerService.HintSize="284,452" />
+      <sap2010:ViewStateData Id="WorkflowConsoleApplication1.Workflow1_1" sap:VirtualizedContainerService.HintSize="295,1964" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
