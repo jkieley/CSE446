@@ -96,21 +96,21 @@
         <Variable x:TypeArguments="x:Int32" Name="secretNumber" />
       </Sequence.Variables>
       <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="Enter a Lower Limit:" />
-      <local:SetLowerLimit Text="{x:Null}" sap2010:WorkflowViewState.IdRef="CodeActivity1_1">
-        <local:SetLowerLimit.outArg>
+      <local:SafeSetLowerLimit Text="{x:Null}" DisplayName="SafeSetLowerLimit" sap2010:WorkflowViewState.IdRef="CodeActivity1_1">
+        <local:SafeSetLowerLimit.outArg>
           <OutArgument x:TypeArguments="x:Int32">
             <mca:CSharpReference x:TypeArguments="x:Int32">lowerLimitInput</mca:CSharpReference>
           </OutArgument>
-        </local:SetLowerLimit.outArg>
-      </local:SetLowerLimit>
+        </local:SafeSetLowerLimit.outArg>
+      </local:SafeSetLowerLimit>
       <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="Enter a Upper Limit:" />
-      <local:SetUpperLimit sap2010:WorkflowViewState.IdRef="CodeActivity2_1">
-        <local:SetUpperLimit.lowerLimitInput>
+      <local:SafeSetUpperLimit upperLimitInput="{x:Null}" DisplayName="SafeSetUpperLimit" sap2010:WorkflowViewState.IdRef="CodeActivity2_1">
+        <local:SafeSetUpperLimit.lowerLimitInput>
           <InArgument x:TypeArguments="x:Int32">
             <mca:CSharpValue x:TypeArguments="x:Int32">lowerLimitInput</mca:CSharpValue>
           </InArgument>
-        </local:SetUpperLimit.lowerLimitInput>
-      </local:SetUpperLimit>
+        </local:SafeSetUpperLimit.lowerLimitInput>
+    </local:SafeSetUpperLimit>
     </Sequence>
     <sads:DebugSymbol.Symbol>d4IBYzpcVXNlcnNcamFtZXMua2llbGV5XERvY3VtZW50c1xWaXN1YWwgU3R1ZGlvIDIwMTNcUHJvamVjdHNcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb24xXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxXb3JrZmxvdzEueGFtbCcrA3QOAgEBLAVbEAIBE1wFchACAQItBy2QAQIBNS4HLnECATMvBzMTAgEwNAc4EwIBLTkHPRMCASo+B0ITAgEnQwdHEwIBJUgHSJABAgEjSQdJkAECASFKB04TAgEeTwdTEwIBG1QHWBMCARhZB1mRAQIBFloHWpEBAgEUYgdiXwIBEWMHaR0CAQtqB2pfAgEJawdxHQIBAy1FLY0BAgE2LkUubgIBNDELMYgBAgExNgs2iwECAS47CzuIAQIBK0ALQIoBAgEoRQtFOgIBJkhFSI0BAgEkSUVJjQECASJMC0yqAQIBH1ELUakBAgEcVgtWrQECARlZRlmOAQIBF1pGWo4BAgEVYkZiXAIBEmYNZmECAQxqRmpcAgEKbg1uWQIBBA==</sads:DebugSymbol.Symbol>
   </Sequence>

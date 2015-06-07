@@ -7,7 +7,7 @@ using System.Activities;
 namespace WorkflowConsoleApplication1
 {
 
-    public sealed class SetLowerLimit : CodeActivity
+    public sealed class SafeSetLowerLimit : CodeActivity
     {
         // Define an activity input argument of type string
         public InArgument<string> Text { get; set; }

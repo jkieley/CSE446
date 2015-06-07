@@ -48,8 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InputUtility.cs" />
-    <Compile Include="SetLowerLimit.cs" />
-    <Compile Include="SetUpperLimit.cs" />
+    <Compile Include="SafeSetLowerLimit.cs" />
+    <Compile Include="SafeSetUpperLimit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
