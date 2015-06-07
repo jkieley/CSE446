@@ -10,18 +10,19 @@ namespace WorkflowConsoleApplication1
     public sealed class SetUpperLimit : CodeActivity
     {
         // Define an activity input argument of type string
-        public InArgument<int> Text { get; set; }
+        public InArgument<int> lowerLimitInput { get; set; }
+        public OutArgument<int> upperLimitInput { get; set; }
 
         // If your activity returns a value, derive from CodeActivity<TResult>
         // and return the value from the Execute method.
         protected override void Execute(CodeActivityContext context)
         {
             // Obtain the runtime value of the Text input argument
-            int userInput = context.GetValue(this.Text);
-            Console.WriteLine("This was your input: " + userInput.ToString());
-            Console.ReadLine();
+            int userInput = context.GetValue(this.lowerLimitInput);
+            int input = InputUtility.takeNumberInput();
+            upperLimitInput.Set(context, input);
 
-            //Console.WriteLine(context.);
+            Console.ReadLine();
         }
     }
 }

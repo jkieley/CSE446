@@ -105,14 +105,14 @@
       </local:SetLowerLimit>
       <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="Enter a Upper Limit:" />
       <local:SetUpperLimit sap2010:WorkflowViewState.IdRef="CodeActivity2_1">
-        <local:SetUpperLimit.Text>
+        <local:SetUpperLimit.lowerLimitInput>
           <InArgument x:TypeArguments="x:Int32">
             <mca:CSharpValue x:TypeArguments="x:Int32">lowerLimitInput</mca:CSharpValue>
           </InArgument>
-        </local:SetUpperLimit.Text>
+        </local:SetUpperLimit.lowerLimitInput>
       </local:SetUpperLimit>
     </Sequence>
-    <sads:DebugSymbol.Symbol>d4IBYzpcVXNlcnNcamFtZXMua2llbGV5XERvY3VtZW50c1xWaXN1YWwgU3R1ZGlvIDIwMTNcUHJvamVjdHNcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb24xXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxXb3JrZmxvdzEueGFtbCcrA3QOAgEBLAVbEAIBE1wFchACAQItBy2QAQIBNS4HLnECATMvBzMTAgEwNAc4EwIBLTkHPRMCASo+B0ITAgEnQwdHEwIBJUgHSJABAgEjSQdJkAECASFKB04TAgEeTwdTEwIBG1QHWBMCARhZB1mRAQIBFloHWpEBAgEUYgdiXwIBEWMHaR0CAQtqB2pfAgEJawdxHQIBAy1FLY0BAgE2LkUubgIBNDELMYgBAgExNgs2iwECAS47CzuIAQIBK0ALQIoBAgEoRQtFOgIBJkhFSI0BAgEkSUVJjQECASJMC0yqAQIBH1ELUakBAgEcVgtWrQECARlZRlmOAQIBF1pGWo4BAgEVYkZiXAIBEmYNZmICAQxqRmpcAgEKbg1uWgIBBA==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d4IBYzpcVXNlcnNcamFtZXMua2llbGV5XERvY3VtZW50c1xWaXN1YWwgU3R1ZGlvIDIwMTNcUHJvamVjdHNcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb24xXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxXb3JrZmxvdzEueGFtbCcrA3QOAgEBLAVbEAIBE1wFchACAQItBy2QAQIBNS4HLnECATMvBzMTAgEwNAc4EwIBLTkHPRMCASo+B0ITAgEnQwdHEwIBJUgHSJABAgEjSQdJkAECASFKB04TAgEeTwdTEwIBG1QHWBMCARhZB1mRAQIBFloHWpEBAgEUYgdiXwIBEWMHaR0CAQtqB2pfAgEJawdxHQIBAy1FLY0BAgE2LkUubgIBNDELMYgBAgExNgs2iwECAS47CzuIAQIBK0ALQIoBAgEoRQtFOgIBJkhFSI0BAgEkSUVJjQECASJMC0yqAQIBH1ELUakBAgEcVgtWrQECARlZRlmOAQIBF1pGWo4BAgEVYkZiXAIBEmYNZmECAQxqRmpcAgEKbg1uWQIBBA==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
