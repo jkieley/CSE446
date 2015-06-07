@@ -11,7 +11,7 @@ namespace WorkflowConsoleApplication1
     {
         // Define an activity input argument of type string
         public InArgument<string> Text { get; set; }
-        public OutArgument<string> outArg { get; set; }
+        public OutArgument<int> outArg { get; set; }
 
         // If your activity returns a value, derive from CodeActivity<TResult>
         // and return the value from the Execute method.
@@ -19,7 +19,7 @@ namespace WorkflowConsoleApplication1
         {
             // Obtain the runtime value of the Text input argument
             string text = context.GetValue(this.Text);
-            string input = Console.ReadLine();
+            int input = InputUtility.takeNumberInput();
             //context.SetValue("lowerLimitInput", input);
             outArg.Set(context, input);
         }
