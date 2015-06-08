@@ -9,6 +9,7 @@
  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
  xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:w="clr-namespace:WorkflowService1;assembly=WorkflowService1"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <p1:Sequence DisplayName="Sequential Service" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <p1:TextExpression.Namespaces>
@@ -70,25 +71,45 @@
         </p1:OutArgument>
       </ReceiveParametersContent>
     </Receive>
+    <w:GenerateRandomNumbert sap2010:WorkflowViewState.IdRef="GenerateRandomNumbert_1">
+      <w:GenerateRandomNumbert.lowerLimit>
+        <p1:InArgument x:TypeArguments="x:Int32">
+          <mca:CSharpValue x:TypeArguments="x:Int32">lowerLimit</mca:CSharpValue>
+        </p1:InArgument>
+      </w:GenerateRandomNumbert.lowerLimit>
+      <w:GenerateRandomNumbert.result>
+        <p1:OutArgument x:TypeArguments="x:Int32">
+          <mca:CSharpReference x:TypeArguments="x:Int32">result</mca:CSharpReference>
+        </p1:OutArgument>
+      </w:GenerateRandomNumbert.result>
+      <w:GenerateRandomNumbert.upperLimit>
+        <p1:InArgument x:TypeArguments="x:Int32">
+          <mca:CSharpValue x:TypeArguments="x:Int32">upperLimit</mca:CSharpValue>
+        </p1:InArgument>
+      </w:GenerateRandomNumbert.upperLimit>
+    </w:GenerateRandomNumbert>
     <SendReply Request="{x:Reference __ReferenceID0}" DisplayName="SendResponse" sap2010:WorkflowViewState.IdRef="SendReply_1">
       <SendParametersContent>
-        <p1:InArgument x:TypeArguments="x:Int32" x:Key="result">5</p1:InArgument>
+        <p1:InArgument x:TypeArguments="x:Int32" x:Key="res">
+          <mca:CSharpValue x:TypeArguments="x:Int32">result</mca:CSharpValue>
+        </p1:InArgument>
       </SendParametersContent>
     </SendReply>
-    <sads:DebugSymbol.Symbol>d3djOlxVc2Vyc1xqYW1lcy5raWVsZXlcRG9jdW1lbnRzXFZpc3VhbCBTdHVkaW8gMjAxM1xQcm9qZWN0c1xXb3JrZmxvd0NvbnNvbGVBcHBsaWNhdGlvbjFcV29ya2Zsb3dTZXJ2aWNlMVxTZXJ2aWNlMS54YW1seAcNA08RAQE2BUgPARBJBU0RAQJFC0VaAR1CC0JaARc7DztcARFLQUtCAQM=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3djOlxVc2Vyc1xqYW1lcy5raWVsZXlcRG9jdW1lbnRzXFZpc3VhbCBTdHVkaW8gMjAxM1xQcm9qZWN0c1xXb3JrZmxvd0NvbnNvbGVBcHBsaWNhdGlvbjFcV29ya2Zsb3dTZXJ2aWNlMVxTZXJ2aWNlMS54YW1seAsOA2MRAQE3BUkPAShKBVofARVbBWERAQJGC0ZaATVDC0NaAS88DzxcASlXC1dSASJNC01SARxSC1JWARZeC15OAQM=</sads:DebugSymbol.Symbol>
   </p1:Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
       <sap2010:ViewStateData Id="Receive_1" sap:VirtualizedContainerService.HintSize="255,86" />
+      <sap2010:ViewStateData Id="GenerateRandomNumbert_1" sap:VirtualizedContainerService.HintSize="255,22" />
       <sap2010:ViewStateData Id="SendReply_1" sap:VirtualizedContainerService.HintSize="255,86" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="277,336">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="277,398">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="WorkflowService_1" sap:VirtualizedContainerService.HintSize="307,406" />
+      <sap2010:ViewStateData Id="WorkflowService_1" sap:VirtualizedContainerService.HintSize="307,468" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </WorkflowService>
