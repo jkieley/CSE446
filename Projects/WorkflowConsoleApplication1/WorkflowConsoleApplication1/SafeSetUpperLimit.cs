@@ -22,8 +22,6 @@ namespace WorkflowConsoleApplication1
             int input = InputUtility.takeNumberInput();
             
             upperLimitInput.Set(context, input);
-
-            Console.ReadLine();
         }
     }
 }
