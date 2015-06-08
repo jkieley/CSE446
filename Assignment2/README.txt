@@ -1,3 +1,9 @@
+Execute Application Instructions:
+- Run Workflow Foundation SOAP Service First (Non Debug Mode). Note Administrator privileges required, static port set to 1000
+- Then Run Application
+
+Submission Details:
+
 1. Workflow Foundation SOAP Service
 \Projects\WorkflowConsoleApplication1\WorkflowService1
 
