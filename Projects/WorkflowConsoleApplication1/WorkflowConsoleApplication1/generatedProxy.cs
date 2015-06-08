@@ -11,7 +11,7 @@
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ServiceModel.ServiceContractAttribute(ConfigurationName="IService")]
+[System.ServiceModel.ServiceContractAttribute(ConfigurationName = "IWorkFlowService")]
 public interface IWorkFlowService
 {
     

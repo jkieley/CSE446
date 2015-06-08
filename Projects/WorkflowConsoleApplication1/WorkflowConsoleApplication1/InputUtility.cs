@@ -37,7 +37,7 @@ namespace WorkflowConsoleApplication1
             }
         }
 
-        private static void buildAttemptOutput(string msg, int count, bool tryAgain)
+        public static void buildAttemptOutput(string msg, int count, bool tryAgain)
         {
             string output = "";
             if (tryAgain)

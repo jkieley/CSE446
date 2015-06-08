@@ -169,6 +169,28 @@
         <While.Condition>
           <mca:CSharpValue x:TypeArguments="x:Boolean">cont</mca:CSharpValue>
         </While.Condition>
+        <local:TestGuessInput sap2010:WorkflowViewState.IdRef="TestGuessInput_1">
+          <local:TestGuessInput.attemptCountInput>
+            <InArgument x:TypeArguments="x:Int32">
+              <mca:CSharpValue x:TypeArguments="x:Int32">attemptCount</mca:CSharpValue>
+            </InArgument>
+          </local:TestGuessInput.attemptCountInput>
+          <local:TestGuessInput.attemptCountOutput>
+            <OutArgument x:TypeArguments="x:Int32">
+              <mca:CSharpReference x:TypeArguments="x:Int32">attemptCount</mca:CSharpReference>
+            </OutArgument>
+          </local:TestGuessInput.attemptCountOutput>
+          <local:TestGuessInput.contOutput>
+            <OutArgument x:TypeArguments="x:Boolean">
+              <mca:CSharpReference x:TypeArguments="x:Boolean">cont</mca:CSharpReference>
+            </OutArgument>
+          </local:TestGuessInput.contOutput>
+          <local:TestGuessInput.secretNumberInput>
+            <InArgument x:TypeArguments="x:Int32">
+              <mca:CSharpValue x:TypeArguments="x:Int32">secretNumber</mca:CSharpValue>
+            </InArgument>
+          </local:TestGuessInput.secretNumberInput>
+        </local:TestGuessInput>
       </While>
       <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_18">
         <InArgument x:TypeArguments="x:String">
@@ -181,7 +203,7 @@
         </InArgument>
       </WriteLine>
     </Sequence>
-    <sads:DebugSymbol.Symbol>d4IBYzpcVXNlcnNcamFtZXMua2llbGV5XERvY3VtZW50c1xWaXN1YWwgU3R1ZGlvIDIwMTNcUHJvamVjdHNcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb24xXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxXb3JrZmxvdzEueGFtbDowA7kBDgIBATEFYBACAX5hBbcBEAIBAjIHMpABAwGuATMHM3EDAawBNAc4EwMBpwE5Bz0TAwGiAT4HQhMDAZ0BQwdHEwMBmAFIB0wTAwGWAU0HTZABAwGUAU4HTpABAwGSAU8HUxMDAY0BVAdYEwMBiAFZB10TAwGDAV4HXpEBAwGBAV8HX5EBAgF/aQdpXwIBfGoHcCECAXJxB3FfAgFwcgd9IQIBXX4HjgEqAgFBjwEHkwETAgE3lAEHnQEQAgEsngEHpwEQAgEhqAEHrAEPAgEXrQEHsQETAgENsgEHtgETAgEDMkUyjQEDAa8BM0UzbgMBrQE2CzaIAQMBqAE7CzuLAQMBowFAC0CIAQMBngFFC0WKAQMBmQFKC0o6AwGXAU1FTY0BAwGVAU5FTo0BAwGTAVELUaoBAwGOAVYLVqkBAwGJAVsLW60BAwGEAV5GXo4BAwGCAV9GX44BAwGAAWlGaVwCAX1tDW1hAgFzcUZxXAIBcXoNemECAWd1DXVZAgFeiwENiwFZAgFUhgENhgFeAgFLgQENgQFZAgFCkQELkQGBAQIBOJsBM5sBOAIBNpcBDZcBWAIBLaUBMaUBMgIBK6EBDaEBXgIBIqoBC6oBTgIBGK8BC68BbAIBDrQBC7QBXAIBBA==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d4IBYzpcVXNlcnNcamFtZXMua2llbGV5XERvY3VtZW50c1xWaXN1YWwgU3R1ZGlvIDIwMTNcUHJvamVjdHNcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb24xXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxXb3JrZmxvdzEueGFtbD8wA88BDgIBATEFYBADAaMBYQXNARACAQIyBzKQAQMB0wEzBzNxAwHRATQHOBMDAcwBOQc9EwMBxwE+B0ITAwHCAUMHRxMDAb0BSAdMEwMBuwFNB02QAQMBuQFOB06QAQMBtwFPB1MTAwGyAVQHWBMDAa0BWQddEwMBqAFeB16RAQMBpgFfB1+RAQMBpAFpB2lfAwGhAWoHcCEDAZcBcQdxXwMBlQFyB30hAwGCAX4HjgEqAgFmjwEHkwETAgFclAEHnQEQAgFRngEHpwEQAgFGqAEHwgEPAgEXwwEHxwETAgENyAEHzAETAgEDMkUyjQEDAdQBM0UzbgMB0gE2CzaIAQMBzQE7CzuLAQMByAFAC0CIAQMBwwFFC0WKAQMBvgFKC0o6AwG8AU1FTY0BAwG6AU5FTo0BAwG4AVELUaoBAwGzAVYLVqkBAwGuAVsLW60BAwGpAV5GXo4BAwGnAV9GX44BAwGlAWlGaVwDAaIBbQ1tYQMBmAFxRnFcAwGWAXoNemEDAYwBdQ11WQMBgwGLAQ2LAVkCAXmGAQ2GAV4CAXCBAQ2BAVkCAWeRAQuRAYEBAgFdmwEzmwE4AgFblwENlwFYAgFSpQExpQEyAgFQoQENoQFeAgFHrAEJwQEgAgEhqgELqgFOAgEYxQELxQFsAgEOygELygFcAgEErwEPrwFYAgE9vgEPvgFYAgE0tAEPtAFgAgEruQEPuQFaAgEi</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -214,6 +236,7 @@
       <sap2010:ViewStateData Id="WriteLine_17" sap:VirtualizedContainerService.HintSize="464,62" />
       <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="464,62" />
       <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="464,62" />
+      <sap2010:ViewStateData Id="TestGuessInput_1" sap:VirtualizedContainerService.HintSize="200,22" />
       <sap2010:ViewStateData Id="While_1" sap:VirtualizedContainerService.HintSize="464,220" />
       <sap2010:ViewStateData Id="WriteLine_18" sap:VirtualizedContainerService.HintSize="464,62" />
       <sap2010:ViewStateData Id="WriteLine_19" sap:VirtualizedContainerService.HintSize="464,62" />
