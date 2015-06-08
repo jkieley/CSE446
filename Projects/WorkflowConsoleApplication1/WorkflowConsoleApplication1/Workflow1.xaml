@@ -140,11 +140,6 @@
           </InArgument>
         </local:GetSecretNumberServiceCall.upperLimit>
       </local:GetSecretNumberServiceCall>
-      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_17">
-        <InArgument x:TypeArguments="x:String">
-          <mca:CSharpValue x:TypeArguments="x:String">"Secreet Number generated was: "+secretNumber.ToString()</mca:CSharpValue>
-        </InArgument>
-      </WriteLine>
       <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Boolean">
@@ -203,7 +198,7 @@
         </InArgument>
       </WriteLine>
     </Sequence>
-    <sads:DebugSymbol.Symbol>d4IBYzpcVXNlcnNcamFtZXMua2llbGV5XERvY3VtZW50c1xWaXN1YWwgU3R1ZGlvIDIwMTNcUHJvamVjdHNcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb24xXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxXb3JrZmxvdzEueGFtbD8wA88BDgIBATEFYBADAaMBYQXNARACAQIyBzKQAQMB0wEzBzNxAwHRATQHOBMDAcwBOQc9EwMBxwE+B0ITAwHCAUMHRxMDAb0BSAdMEwMBuwFNB02QAQMBuQFOB06QAQMBtwFPB1MTAwGyAVQHWBMDAa0BWQddEwMBqAFeB16RAQMBpgFfB1+RAQMBpAFpB2lfAwGhAWoHcCEDAZcBcQdxXwMBlQFyB30hAwGCAX4HjgEqAgFmjwEHkwETAgFclAEHnQEQAgFRngEHpwEQAgFGqAEHwgEPAgEXwwEHxwETAgENyAEHzAETAgEDMkUyjQEDAdQBM0UzbgMB0gE2CzaIAQMBzQE7CzuLAQMByAFAC0CIAQMBwwFFC0WKAQMBvgFKC0o6AwG8AU1FTY0BAwG6AU5FTo0BAwG4AVELUaoBAwGzAVYLVqkBAwGuAVsLW60BAwGpAV5GXo4BAwGnAV9GX44BAwGlAWlGaVwDAaIBbQ1tYQMBmAFxRnFcAwGWAXoNemEDAYwBdQ11WQMBgwGLAQ2LAVkCAXmGAQ2GAV4CAXCBAQ2BAVkCAWeRAQuRAYEBAgFdmwEzmwE3AgFblwENlwFYAgFSpQExpQEyAgFQoQENoQFeAgFHrAEJwQEgAgEhqgELqgFOAgEYxQELxQFsAgEOygELygFcAgEErwEPrwFYAgE9vgEPvgFYAgE0tAEPtAFgAgEruQEPuQFaAgEi</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d4IBYzpcVXNlcnNcamFtZXMua2llbGV5XERvY3VtZW50c1xWaXN1YWwgU3R1ZGlvIDIwMTNcUHJvamVjdHNcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb24xXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxXb3JrZmxvdzEueGFtbD0wA8oBDgIBATEFYBADAZkBYQXIARACAQIyBzKQAQMByQEzBzNxAwHHATQHOBMDAcIBOQc9EwMBvQE+B0ITAwG4AUMHRxMDAbMBSAdMEwMBsQFNB02QAQMBrwFOB06QAQMBrQFPB1MTAwGoAVQHWBMDAaMBWQddEwMBngFeB16RAQMBnAFfB1+RAQMBmgFpB2lfAwGXAWoHcCEDAY0BcQdxXwMBiwFyB30hAgF4fgeOASoCAVyPAQeYARACAVGZAQeiARACAUajAQe9AQ8CARe+AQfCARMCAQ3DAQfHARMCAQMyRTKNAQMBygEzRTNuAwHIATYLNogBAwHDATsLO4sBAwG+AUALQIgBAwG5AUULRYoBAwG0AUoLSjoDAbIBTUVNjQEDAbABTkVOjQEDAa4BUQtRqgEDAakBVgtWqQEDAaQBWwtbrQEDAZ8BXkZejgEDAZ0BX0ZfjgEDAZsBaUZpXAMBmAFtDW1hAwGOAXFGcVwDAYwBeg16YQMBggF1DXVZAgF5iwENiwFZAgFvhgENhgFeAgFmgQENgQFZAgFdlgEzlgE3AgFbkgENkgFYAgFSoAExoAEyAgFQnAENnAFeAgFHpwEJvAEgAgEhpQELpQFOAgEYwAELwAFsAgEOxQELxQFcAgEEqgEPqgFYAgE9uQEPuQFYAgE0rwEPrwFgAgErtAEPtAFaAgEi</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -233,28 +228,27 @@
       <sap2010:ViewStateData Id="WriteLine_16" sap:VirtualizedContainerService.HintSize="464,62" />
       <sap2010:ViewStateData Id="CodeActivity2_1" sap:VirtualizedContainerService.HintSize="464,22" />
       <sap2010:ViewStateData Id="getSecretNumberServiceCall_1" sap:VirtualizedContainerService.HintSize="464,22" />
-      <sap2010:ViewStateData Id="WriteLine_17" sap:VirtualizedContainerService.HintSize="464,62" />
       <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="464,62" />
       <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="464,62" />
       <sap2010:ViewStateData Id="TestGuessInput_1" sap:VirtualizedContainerService.HintSize="200,22" />
       <sap2010:ViewStateData Id="While_1" sap:VirtualizedContainerService.HintSize="464,220" />
       <sap2010:ViewStateData Id="WriteLine_18" sap:VirtualizedContainerService.HintSize="464,62" />
       <sap2010:ViewStateData Id="WriteLine_19" sap:VirtualizedContainerService.HintSize="464,62" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="486,1244">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="486,1142">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="508,2920">
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="508,2818">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="WorkflowConsoleApplication1.Workflow1_1" sap:VirtualizedContainerService.HintSize="548,3000" />
+      <sap2010:ViewStateData Id="WorkflowConsoleApplication1.Workflow1_1" sap:VirtualizedContainerService.HintSize="548,2898" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
