@@ -15,16 +15,16 @@
 public interface IAsuService
 {
     
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAsuService/secretNumber", ReplyAction="http://tempuri.org/IAsuService/secretNumberResponse")]
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/secretNumber", ReplyAction="http://tempuri.org/IService/secretNumberResponse")]
     int secretNumber(int lower, int upper);
     
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAsuService/secretNumber", ReplyAction="http://tempuri.org/IAsuService/secretNumberResponse")]
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/secretNumber", ReplyAction="http://tempuri.org/IService/secretNumberResponse")]
     System.Threading.Tasks.Task<int> secretNumberAsync(int lower, int upper);
     
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAsuService/checkNumber", ReplyAction="http://tempuri.org/IAsuService/checkNumberResponse")]
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/checkNumber", ReplyAction="http://tempuri.org/IService/checkNumberResponse")]
     string checkNumber(int userNum, int secretNum);
     
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAsuService/checkNumber", ReplyAction="http://tempuri.org/IAsuService/checkNumberResponse")]
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/checkNumber", ReplyAction="http://tempuri.org/IService/checkNumberResponse")]
     System.Threading.Tasks.Task<string> checkNumberAsync(int userNum, int secretNum);
 }
 
