@@ -8,18 +8,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WorkflowConsoleApplication1.workflowService {
+namespace WorkflowConsoleApplication1.ServiceReference1 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="workflowService.IService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService")]
     public interface IService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SecretNumber", ReplyAction="http://tempuri.org/IService/SecretNumberResponse")]
-        WorkflowConsoleApplication1.workflowService.SecretNumberResponse SecretNumber(WorkflowConsoleApplication1.workflowService.SecretNumberRequest request);
+        WorkflowConsoleApplication1.ServiceReference1.SecretNumberResponse SecretNumber(WorkflowConsoleApplication1.ServiceReference1.SecretNumberRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SecretNumber", ReplyAction="http://tempuri.org/IService/SecretNumberResponse")]
-        System.Threading.Tasks.Task<WorkflowConsoleApplication1.workflowService.SecretNumberResponse> SecretNumberAsync(WorkflowConsoleApplication1.workflowService.SecretNumberRequest request);
+        System.Threading.Tasks.Task<WorkflowConsoleApplication1.ServiceReference1.SecretNumberResponse> SecretNumberAsync(WorkflowConsoleApplication1.ServiceReference1.SecretNumberRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

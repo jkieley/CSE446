@@ -10,7 +10,9 @@
  xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="outArg" Type="InArgument(x:Int32)" />
+    <x:Property Name="upperLimit" Type="InArgument(x:Int32)" />
+    <x:Property Name="lowerLimit" Type="InArgument(x:Int32)" />
+    <x:Property Name="secretNum" Type="OutArgument(x:Int32)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap2010:WorkflowViewState.IdRef>WorkflowConsoleApplication1.Workflow1_1</sap2010:WorkflowViewState.IdRef>
@@ -30,12 +32,15 @@
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Web</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>WorkflowService1</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
       <AssemblyReference>WorkflowConsoleApplication1</AssemblyReference>
     </sco:Collection>
@@ -94,6 +99,7 @@
         <Variable x:TypeArguments="x:Int32" Name="lowerLimitInput" />
         <Variable x:TypeArguments="x:Int32" Name="upperLimitInput" />
         <Variable x:TypeArguments="x:Int32" Name="secretNumber" />
+        <Variable x:TypeArguments="x:Boolean" Name="cont" />
       </Sequence.Variables>
       <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="Enter a Lower Limit:" />
       <local:SafeSetLowerLimit Text="{x:Null}" DisplayName="SafeSetLowerLimit" sap2010:WorkflowViewState.IdRef="CodeActivity1_1">
@@ -104,15 +110,62 @@
         </local:SafeSetLowerLimit.outArg>
       </local:SafeSetLowerLimit>
       <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="Enter a Upper Limit:" />
-      <local:SafeSetUpperLimit upperLimitInput="{x:Null}" DisplayName="SafeSetUpperLimit" sap2010:WorkflowViewState.IdRef="CodeActivity2_1">
+      <local:SafeSetUpperLimit DisplayName="SafeSetUpperLimit" sap2010:WorkflowViewState.IdRef="CodeActivity2_1">
         <local:SafeSetUpperLimit.lowerLimitInput>
           <InArgument x:TypeArguments="x:Int32">
             <mca:CSharpValue x:TypeArguments="x:Int32">lowerLimitInput</mca:CSharpValue>
           </InArgument>
         </local:SafeSetUpperLimit.lowerLimitInput>
-    </local:SafeSetUpperLimit>
+        <local:SafeSetUpperLimit.upperLimitInput>
+          <OutArgument x:TypeArguments="x:Int32">
+            <mca:CSharpReference x:TypeArguments="x:Int32">upperLimitInput</mca:CSharpReference>
+          </OutArgument>
+        </local:SafeSetUpperLimit.upperLimitInput>
+      </local:SafeSetUpperLimit>
+      <local:GetSecretNumberServiceCall sap2010:WorkflowViewState.IdRef="getSecretNumberServiceCall_1">
+        <local:GetSecretNumberServiceCall.lowerLimit>
+          <InArgument x:TypeArguments="x:Int32">
+            <mca:CSharpValue x:TypeArguments="x:Int32">lowerLimitInput</mca:CSharpValue>
+          </InArgument>
+        </local:GetSecretNumberServiceCall.lowerLimit>
+        <local:GetSecretNumberServiceCall.secretNum>
+          <OutArgument x:TypeArguments="x:Int32">
+            <mca:CSharpReference x:TypeArguments="x:Int32">secretNumber</mca:CSharpReference>
+          </OutArgument>
+        </local:GetSecretNumberServiceCall.secretNum>
+        <local:GetSecretNumberServiceCall.upperLimit>
+          <InArgument x:TypeArguments="x:Int32">
+            <mca:CSharpValue x:TypeArguments="x:Int32">upperLimitInput</mca:CSharpValue>
+          </InArgument>
+        </local:GetSecretNumberServiceCall.upperLimit>
+      </local:GetSecretNumberServiceCall>
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_17">
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String">"Secreet Number generated was: "+secretNumber.ToString()</mca:CSharpValue>
+        </InArgument>
+      </WriteLine>
+      <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_18">
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String">Console.ReadLine();</mca:CSharpValue>
+        </InArgument>
+      </WriteLine>
+      <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">
+            <mca:CSharpReference x:TypeArguments="x:Boolean">cont</mca:CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+        </Assign.Value>
+      </Assign>
+      <While sap2010:WorkflowViewState.IdRef="While_1">
+        <While.Condition>
+          <mca:CSharpValue x:TypeArguments="x:Boolean">cont</mca:CSharpValue>
+        </While.Condition>
+      </While>
     </Sequence>
-    <sads:DebugSymbol.Symbol>d4IBYzpcVXNlcnNcamFtZXMua2llbGV5XERvY3VtZW50c1xWaXN1YWwgU3R1ZGlvIDIwMTNcUHJvamVjdHNcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb24xXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxXb3JrZmxvdzEueGFtbCcrA3QOAgEBLAVbEAIBE1wFchACAQItBy2QAQIBNS4HLnECATMvBzMTAgEwNAc4EwIBLTkHPRMCASo+B0ITAgEnQwdHEwIBJUgHSJABAgEjSQdJkAECASFKB04TAgEeTwdTEwIBG1QHWBMCARhZB1mRAQIBFloHWpEBAgEUYgdiXwIBEWMHaR0CAQtqB2pfAgEJawdxHQIBAy1FLY0BAgE2LkUubgIBNDELMYgBAgExNgs2iwECAS47CzuIAQIBK0ALQIoBAgEoRQtFOgIBJkhFSI0BAgEkSUVJjQECASJMC0yqAQIBH1ELUakBAgEcVgtWrQECARlZRlmOAQIBF1pGWo4BAgEVYkZiXAIBEmYNZmECAQxqRmpcAgEKbg1uWQIBBA==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d4IBYzpcVXNlcnNcamFtZXMua2llbGV5XERvY3VtZW50c1xWaXN1YWwgU3R1ZGlvIDIwMTNcUHJvamVjdHNcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb24xXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxXb3JrZmxvdzEueGFtbDUwA6kBDgIBATEFYBACAV9hBacBEAIBAjIHMpABAwGPATMHM3EDAY0BNAc4EwMBiAE5Bz0TAwGDAT4HQhMCAX5DB0cTAgF5SAdMEwIBd00HTZABAgF1TgdOkAECAXNPB1MTAgFuVAdYEwIBaVkHXRMCAWReB16RAQIBYl8HX5EBAgFgaAdoXwIBXWkHbyECAVRwB3BfAgFScQd8IQIBQX0HjQEqAgEojgEHkgETAgEfkwEHlwETAgEWmAEHoQEQAgEMogEHpgEPAgEDMkUyjQEDAZABM0UzbgMBjgE2CzaIAQMBiQE7CzuLAQMBhAFAC0CIAQIBf0ULRYoBAgF6SgtKOgIBeE1FTY0BAgF2TkVOjQECAXRRC1GqAQIBb1YLVqkBAgFqWwtbrQECAWVeRl6OAQIBY19GX44BAgFhaEZoXAIBXmwNbGECAVVwRnBcAgFTeQ15YQIBSnQNdFkCAUKKAQ2KAVkCATmFAQ2FAV4CATGAAQ2AAVkCASmQAQuQAYEBAgEglQELlQFcAgEXnwEznwE4AgEVmwENmwFYAgENpAELpAFOAgEE</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -130,32 +183,37 @@
       <sap2010:ViewStateData Id="WriteLine_12" sap:VirtualizedContainerService.HintSize="211,62" />
       <sap2010:ViewStateData Id="WriteLine_13" sap:VirtualizedContainerService.HintSize="211,62" />
       <sap2010:ViewStateData Id="WriteLine_14" sap:VirtualizedContainerService.HintSize="211,62" />
-      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="233,1512">
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="486,1512">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="WriteLine_15" sap:VirtualizedContainerService.HintSize="211,62" />
-      <sap2010:ViewStateData Id="CodeActivity1_1" sap:VirtualizedContainerService.HintSize="211,22" />
-      <sap2010:ViewStateData Id="WriteLine_16" sap:VirtualizedContainerService.HintSize="211,62" />
-      <sap2010:ViewStateData Id="CodeActivity2_1" sap:VirtualizedContainerService.HintSize="211,22" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="233,412">
+      <sap2010:ViewStateData Id="WriteLine_15" sap:VirtualizedContainerService.HintSize="464,62" />
+      <sap2010:ViewStateData Id="CodeActivity1_1" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="WriteLine_16" sap:VirtualizedContainerService.HintSize="464,62" />
+      <sap2010:ViewStateData Id="CodeActivity2_1" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="getSecretNumberServiceCall_1" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="WriteLine_17" sap:VirtualizedContainerService.HintSize="464,62" />
+      <sap2010:ViewStateData Id="WriteLine_18" sap:VirtualizedContainerService.HintSize="464,62" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="464,62" />
+      <sap2010:ViewStateData Id="While_1" sap:VirtualizedContainerService.HintSize="464,220" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="486,1040">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="255,2088">
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="508,2716">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="WorkflowConsoleApplication1.Workflow1_1" sap:VirtualizedContainerService.HintSize="295,2168" />
+      <sap2010:ViewStateData Id="WorkflowConsoleApplication1.Workflow1_1" sap:VirtualizedContainerService.HintSize="548,2796" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

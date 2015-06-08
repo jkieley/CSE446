@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowConsoleApplication1", "WorkflowConsoleApplication1\WorkflowConsoleApplication1.csproj", "{B3EC6201-B2AD-4CC6-853F-D563A1166240}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5EE3197-60E4-419F-ADA5-8027B1093B08} = {D5EE3197-60E4-419F-ADA5-8027B1093B08}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowService1", "WorkflowService1\WorkflowService1.csproj", "{D5EE3197-60E4-419F-ADA5-8027B1093B08}"
 EndProject
