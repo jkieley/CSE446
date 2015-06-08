@@ -36,5 +36,20 @@ namespace WorkflowConsoleApplication1
                 return takeNumberInput("Invalid Input, try again...");
             }
         }
+
+        private static void buildAttemptOutput(string msg, int count, bool tryAgain)
+        {
+            string output = "";
+            if (tryAgain)
+            {
+                output += msg + " - Try Again! - " + " Attempts - " + count.ToString();
+            }
+            else
+            {
+                output += msg + " Attempts - " + count.ToString();
+            }
+
+            Console.WriteLine(output);
+        }
     }
 }

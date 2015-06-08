@@ -12,7 +12,7 @@
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
 [System.ServiceModel.ServiceContractAttribute(ConfigurationName="IService")]
-public interface IService
+public interface IWorkFlowService
 {
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SecretNumber", ReplyAction="http://tempuri.org/IService/SecretNumberResponse")]
@@ -25,35 +25,35 @@ public interface IService
 }
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-public interface IServiceChannel : IService, System.ServiceModel.IClientChannel
+public interface IServiceChannel2 : IWorkFlowService, System.ServiceModel.IClientChannel
 {
 }
 
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-public partial class ServiceClient : System.ServiceModel.ClientBase<IService>, IService
+public partial class WorkflowServiceClient : System.ServiceModel.ClientBase<IWorkFlowService>, IWorkFlowService
 {
     
-    public ServiceClient()
+    public WorkflowServiceClient()
     {
     }
     
-    public ServiceClient(string endpointConfigurationName) : 
+    public WorkflowServiceClient(string endpointConfigurationName) : 
             base(endpointConfigurationName)
     {
     }
     
-    public ServiceClient(string endpointConfigurationName, string remoteAddress) : 
+    public WorkflowServiceClient(string endpointConfigurationName, string remoteAddress) : 
             base(endpointConfigurationName, remoteAddress)
     {
     }
     
-    public ServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+    public WorkflowServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
             base(endpointConfigurationName, remoteAddress)
     {
     }
     
-    public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+    public WorkflowServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
             base(binding, remoteAddress)
     {
     }

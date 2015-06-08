@@ -21,7 +21,7 @@ namespace WorkflowConsoleApplication1
             // Obtain the runtime value of the Text input argument
             int lower = context.GetValue(this.lowerLimit);
             int upper = context.GetValue(this.upperLimit);
-            ServiceClient client = new ServiceClient();
+            WorkflowServiceClient client = new WorkflowServiceClient();
             int result = client.SecretNumber(lower,upper);
             secretNum.Set(context, result);
         }
