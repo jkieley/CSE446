@@ -1,0 +1,46 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="BPELProcess1"
+     targetNamespace="http://xmlns.oracle.com/Application1/Project1/BPELProcess1"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:client="http://xmlns.oracle.com/Application1/Project1/BPELProcess1"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+     xmlns:cor="http://xmlns.oracle.com/Application1/Project1/BPELProcess1/correlationset"
+    >
+    <plnk:partnerLinkType name="BPELProcess1">
+        <plnk:role name="BPELProcess1Provider" portType="client:BPELProcess1"/>
+    </plnk:partnerLinkType>
+    <wsdl:import namespace="http://xmlns.oracle.com/Application1/Project1/BPELProcess1/correlationset"
+         location="BPELProcess1_properties.wsdl"/>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/Application1/Project1/BPELProcess1" schemaLocation="../Schemas/BPELProcess1.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="BPELProcess1RequestMessage">
+        <wsdl:part name="payload" element="client:process"/>
+    </wsdl:message>
+    <wsdl:message name="BPELProcess1ResponseMessage">
+        <wsdl:part name="payload" element="client:processResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="BPELProcess1">
+        <wsdl:operation name="process">
+            <wsdl:input message="client:BPELProcess1RequestMessage"/>
+            <wsdl:output message="client:BPELProcess1ResponseMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ASURepoNumberGuessingBinding" type="client:BPELProcess1">
+        <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="process">
+            <soap12:operation style="document" soapAction="http://xmlns.oracle.com/Application1/Project1/BPELProcess1/process"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="payload"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="payload"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

@@ -1,0 +1,15 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="Service"
+     targetNamespace="http://tempuri.org/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:ns1="http://tempuri.org/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <plnk:partnerLinkType name="IService_PLT">
+        <plnk:role name="IService_Role" portType="ns1:IService"/>
+    </plnk:partnerLinkType>
+    <wsdl:import namespace="http://tempuri.org/" location="http://venus.eas.asu.edu/WSRepository/Services/NumberGuess/Service.svc?wsdl"/>
+</wsdl:definitions>

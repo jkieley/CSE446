@@ -1,0 +1,16 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="properties"
+     targetNamespace="http://xmlns.oracle.com/Application1/Project1/BPELProcess1/correlationset"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <vprop:property name="lowerLimit" type="xsd:int"/>
+    <vprop:property name="upperLimit" type="xsd:int"/>
+    <vprop:property name="secretNumber" type="xsd:int"/>
+    <vprop:property name="guess" type="xsd:int"/>
+    <vprop:property name="GuessCheckReply" type="xsd:string"/>
+</wsdl:definitions>

@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line>69</line>
+      <col/>
+      <file>BPEL/BPELProcess1.bpel</file>
+      <name>BPEL/BPELProcess1.bpel</name>
+      <fix>Make sure that the attribute "inputVariable" is specified.</fix>
+      <msg>Attribute "inputVariable" is not set on this &lt;bpel:invoke> activity.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line>69</line>
+      <col/>
+      <file>BPEL/BPELProcess1.bpel</file>
+      <name>BPEL/BPELProcess1.bpel</name>
+      <fix>Make sure that the attribute "outputVariable" is specified.</fix>
+      <msg>Attribute "outputVariable" is not set on this &lt;bpel:invoke> activity.</msg>
+   </Fault>
+</Faults>
