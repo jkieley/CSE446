@@ -7,20 +7,20 @@ using System.Data.Linq;
 using System.Data.Linq.Mapping;
 
 [Table(Name = "Courses")] // Define the attribute
-public class Course
+public partial class Course
 {
-    [Column(IsPrimaryKey = true, IsDbGenerated = true)]
-    public int courseId { get; set; }
+    [Column(IsPrimaryKey = true, IsDbGenerated = true, Name = "course_id")]
+    public int CourseId { get; set; }
 
-    [Column]
+    [Column(Name = "course_num")]
     public int CourseNum { get; set; }
 
-    [Column]
+    [Column(Name = "course_title")]
     public string CourseTitle { get; set; }
-    
-    [Column]
+
+    [Column(Name = "instructor")]
     public string Instructor { get; set; }
 
-    [Column]
+    [Column(Name = "cap")]
     public int Cap { get; set; }
 }

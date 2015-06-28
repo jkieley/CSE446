@@ -9,7 +9,7 @@ using System.Data.Linq.Mapping;
 [Database] 
 public class CustomDatabase : DataContext
 {
-	public CustomDatabase() : base("~/App_Data/Database.mdf"){}
+    public CustomDatabase() : base(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True") { }
     public Table<Course> Courses;
 
 }

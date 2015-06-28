@@ -10,15 +10,15 @@ using System.Data.Linq.Mapping;
 
 public class Service : IService
 {
-    public List<Course> getAllCourses()
+    public List<string> getAllCourses()
 	{
         CustomDatabase db = new CustomDatabase();
 
         IEnumerable<Course> queryResult =
             from c in db.Courses
-            where c.course_num > 0
+            where c.CourseNum > 0
      
             select c;
-        return queryResult.ToList<Course>();
+        return new List<string>{queryResult.ToList<Course>().ToString()};
 	}
 }
