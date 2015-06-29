@@ -11,5 +11,5 @@ public class CustomDatabase : DataContext
 {
     public CustomDatabase() : base(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True") { }
     public Table<Course> Courses;
-
+    public Table<Instructor> Instructors;
 }

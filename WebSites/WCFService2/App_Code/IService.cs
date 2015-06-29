@@ -11,5 +11,8 @@ public interface IService
 {
 	[OperationContract]
 	List<Course> getAllCourses();
+
+    [OperationContract]
+    List<Instructor> saveIntructors();
 }
 
