@@ -69,6 +69,7 @@ public class Service : IService
         return queryResult.ToList<CourseNumCourseMap>();
     }
 
+    //Question 6c
     public string getInstructorCourseJoin() {
         CustomDatabase db = new CustomDatabase();
 	    XElement InstructorAndCourse = new XElement("Instructors",
