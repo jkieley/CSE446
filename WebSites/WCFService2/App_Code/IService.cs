@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Xml.Linq;
+
 
 [ServiceContract]
 public interface IService
@@ -24,6 +26,10 @@ public interface IService
     //Question 6b
     [OperationContract]
     List<CourseNumCourseMap> getCoursesByCourseCode();
+
+    //Question 6c
+    [OperationContract]
+    string getInstructorCourseJoin();
 }
 
 [DataContract]

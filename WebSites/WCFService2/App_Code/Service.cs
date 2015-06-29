@@ -4,9 +4,11 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Xml;
 using System.Linq;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
+using System.Xml.Linq;
 
 public class Service : IService
 {
@@ -65,5 +67,23 @@ public class Service : IService
         group c by c.CourseNum into g
         select new CourseNumCourseMap { CourseNum = g.Key, Courses = g.ToList() };
         return queryResult.ToList<CourseNumCourseMap>();
+    }
+
+    public string getInstructorCourseJoin() {
+        CustomDatabase db = new CustomDatabase();
+	    XElement InstructorAndCourse = new XElement("Instructors",
+	    from i in db.Instructors
+        join c in db.Courses on i.LastName equals c.Instructor into gj
+	    select new XElement("instructor",
+		    new XAttribute("FirstName", i.FirstName),
+		    new XAttribute("LastName", i.LastName),
+		    new XAttribute("Office", i.OfficeNumber),
+		    from subc in gj
+		    select new XElement("course",
+			    new XAttribute("Code", subc.CourseNum),
+			    new XAttribute("Cap", subc.Cap),
+			    subc.CourseTitle)));
+
+	    return InstructorAndCourse.ToString();
     }
 }
