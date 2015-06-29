@@ -56,4 +56,14 @@ public class Service : IService
           select c;
         return queryResult.ToList<Course>();
     }
+
+    //Question 6b
+    public List<CourseNumCourseMap> getCoursesByCourseCode(){
+        CustomDatabase db = new CustomDatabase();
+        IEnumerable<CourseNumCourseMap> queryResult =
+        from c in db.Courses
+        group c by c.CourseNum into g
+        select new CourseNumCourseMap { CourseNum = g.Key, Courses = g.ToList() };
+        return queryResult.ToList<CourseNumCourseMap>();
+    }
 }

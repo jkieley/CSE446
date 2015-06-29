@@ -20,5 +20,17 @@ public interface IService
     // Question 6a
     [OperationContract]
     List<Course> getCourses300AndAbove();
+
+    //Question 6b
+    [OperationContract]
+    List<CourseNumCourseMap> getCoursesByCourseCode();
 }
 
+[DataContract]
+public class CourseNumCourseMap {
+    [DataMember]
+    public int CourseNum { get; set; }
+
+    [DataMember]
+    public List<Course> Courses { get; set; }
+}
