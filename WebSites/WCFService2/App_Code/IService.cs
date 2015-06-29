@@ -10,6 +10,6 @@ using System.Text;
 public interface IService
 {
 	[OperationContract]
-	List<string> getAllCourses();
+	List<Course> getAllCourses();
 }
 

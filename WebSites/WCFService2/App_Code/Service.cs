@@ -10,7 +10,7 @@ using System.Data.Linq.Mapping;
 
 public class Service : IService
 {
-    public List<string> getAllCourses()
+    public List<Course> getAllCourses()
 	{
         CustomDatabase db = new CustomDatabase();
 
@@ -19,6 +19,6 @@ public class Service : IService
             where c.CourseNum > 0
      
             select c;
-        return new List<string>{queryResult.ToList<Course>().ToString()};
+        return queryResult.ToList<Course>();
 	}
 }

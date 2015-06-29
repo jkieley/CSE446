@@ -5,6 +5,9 @@ using System.Web;
 using System.Linq;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
+using System.ServiceModel;
+using System.ServiceModel.Web;
+using System.Runtime.Serialization;
 
 [Table(Name = "Courses")] // Define the attribute
 public partial class Course
