@@ -72,16 +72,16 @@ public class Service : IService
     public string getInstructorCourseJoin() {
         CustomDatabase db = new CustomDatabase();
 	    XElement InstructorAndCourse = new XElement("Instructors",
-	    from i in db.Instructors
-        join c in db.Courses on i.LastName equals c.Instructor into gj
+        from c in db.Courses
+        join i in db.Instructors on c.Instructor equals i.LastName into gj
+        from subc in gj
 	    select new XElement("instructor",
-		    new XAttribute("FirstName", i.FirstName),
-		    new XAttribute("LastName", i.LastName),
-		    new XAttribute("Office", i.OfficeNumber),
-		    from subc in gj
-		    select new XElement("course",
-			    new XAttribute("Code", subc.CourseNum),
-			    new XAttribute("Cap", subc.Cap),
+		    new XAttribute("FirstName", subc.FirstName),
+		    new XAttribute("LastName", subc.LastName),
+		    new XAttribute("Office", subc.OfficeNumber),
+		    new XElement("course",
+			    new XAttribute("Code", c.CourseNum),
+			    new XAttribute("Cap", c.Cap),
 			    subc.CourseTitle)));
 
 	    return InstructorAndCourse.ToString();
