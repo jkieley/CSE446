@@ -14,5 +14,8 @@ public interface IService
 
     [OperationContract]
     List<Instructor> saveIntructors();
+
+    [OperationContract]
+    List<Course> getCourses300AndAbove();
 }
 

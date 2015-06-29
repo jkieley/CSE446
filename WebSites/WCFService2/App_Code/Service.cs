@@ -45,4 +45,15 @@ public class Service : IService
             return queryResult.ToList<Instructor>();
         }
     }
+
+    //Question 6a
+    public List<Course> getCourses300AndAbove() {
+        CustomDatabase db = new CustomDatabase();
+        IEnumerable<Course> queryResult =
+          from c in db.Courses
+          where c.CourseNum > 300
+          orderby c.Cap 
+          select c;
+        return queryResult.ToList<Course>();
+    }
 }
