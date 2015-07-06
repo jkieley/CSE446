@@ -6,20 +6,34 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Xml.Linq;
+using System.Web.Hosting;
+using System.IO;
 
 namespace Assignment5WcfService
 {
     public class Service1 : IService1
     {
-        string dbFileName = "~/App_Data/XMLMessagesDb.xml";
-        void sendMessage(string senderId, string receiverId, string message) {
-            XElement messages = XElement.Load(dbFileName);
-            messages.Add(new Message { SenderId = senderId, ReceiverId = receiverId, Message = message }.toElement());
-            messages.Save(dbFileName);
+        string dbFileLocation = Path.Combine(
+            HostingEnvironment.ApplicationPhysicalPath,
+            @"App_Data\XMLMessagesDb.xml"
+        );         
+
+
+        public void sendMessage(string senderId, string receiverId, string message) {
+            XElement messages = XElement.Load(dbFileLocation);
+            messages.Add(new Message { SenderId = senderId, ReceiverId = receiverId, Content = message }.toElement());
+            messages.Save(dbFileLocation);
         }
 
-        List<Message> receiveMsg(string receiverId) {
-            return null;
+        public List<Message> receiveMsg(string receiverId) {
+            XElement allMessages = XElement.Load(dbFileLocation);
+
+            IEnumerable<XElement> messagesForThatReciever =
+            from c in allMessages.Elements("Message")
+            where (string)c.Attribute("ReceiverId") == receiverId
+            select c;
+
+            return Message.converList(messagesForThatReciever);
         }
     }
 }

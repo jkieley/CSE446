@@ -29,14 +29,39 @@ namespace Assignment5WcfService
     [DataContract]
     public class Message
     {
+        [DataMember]
         public string SenderId { get; set; }
+        [DataMember]
         public string ReceiverId { get; set; }
-        public string Message { get; set; }
+        [DataMember]
+        public string Content { get; set; }
+
+        public Message(){}
+
+        public Message(XElement element) {
+            this.SenderId = (string) element.Attribute("SenderId");
+            this.ReceiverId = (string) element.Attribute("ReceiverId");
+            this.Content = element.Value;
+        }
+        
         public XElement toElement() {
             return new XElement("Message",
                 new XAttribute("SenderId", this.SenderId),
                 new XAttribute("ReceiverId", this.ReceiverId),
-                this.Message);
+                this.Content);
+        }
+
+        public static List<Message> converList(IEnumerable<XElement> list)
+        {
+            List<Message> messageList = new List<Message>();
+            var enumerator = list.GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                XElement element = enumerator.Current;
+                messageList.Add(new Message(element));
+            }
+
+            return messageList;
         }
     }
 }
