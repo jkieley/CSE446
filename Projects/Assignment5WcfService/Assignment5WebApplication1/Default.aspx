@@ -38,12 +38,11 @@
         <h4>Message Service Test Client</h4>
         <div class="input-group">
             <label>To Whom(ID)?</label>
-            <input type="text" name="receiverId" runat="server"/>
-            <input type="hidden" name="senderId" value="<%= this.test %>" />
+            <input type="text" id="receiverId" name="receiverId" runat="server"/>
         </div>
         <div class="input-group">
             <label>Message:</label>
-             <asp:TextBox ID="messageContent" TextMode="multiline" Columns="50" Rows="5" runat="server"/>
+             <asp:TextBox ID="messageContent" name="messageContent" TextMode="multiline" Columns="50" Rows="5" runat="server"/>
             <div>
                 <asp:Button Text="Send This Message" runat="server" OnClick="Unnamed1_Click" id="sendMsg"/>
             </div>
@@ -52,10 +51,9 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server" />
         <asp:Timer ID="Timer1" OnTick="Timer1_Tick" runat="server" Interval="1000" />
     <div>
-        <h4>Your id is: <%= this.test %></h4>
+        <h4>Your id is: <%= Session["uuid"] %></h4>
         <div class="input-group">
-            <input type="hidden" name="receiverId" value="<%= this.test %>" />
-            <asp:Button Text="Recieve my Messages" runat="server" id="recieveMsg"/>
+            <asp:Button Text="Recieve my Messages" runat="server" id="recieveMsg" OnClick="recieveMsg_Click"/>
         </div>
         <div class="input-group">
             <label>All messages to me:</label>
