@@ -5,4 +5,7 @@
   <Message SenderId="bda8850a-d962-47a9-9161-78303d0e0fb6" ReceiverId="bda8850a-d962-47a9-9161-78303d0e0fb6">test5</Message>
   <Message SenderId="a5555467-c46a-4ec8-8bef-04a6c6b6b06b" ReceiverId="bc694318-4a0a-412d-b3bb-640439e7da47">test</Message>
   <Message SenderId="a5555467-c46a-4ec8-8bef-04a6c6b6b06b" ReceiverId="bc694318-4a0a-412d-b3bb-640439e7da47">test5</Message>
+  <Message SenderId="f7fc2cf8-5d5a-49a2-8c66-689542ab0f05" ReceiverId="e271554c-e4c3-474d-8f61-b7bd5baeda75">test56</Message>
+  <Message SenderId="f7fc2cf8-5d5a-49a2-8c66-689542ab0f05" ReceiverId="e271554c-e4c3-474d-8f61-b7bd5baeda75">Now its working! :)</Message>
+  <Message SenderId="e271554c-e4c3-474d-8f61-b7bd5baeda75" ReceiverId="f7fc2cf8-5d5a-49a2-8c66-689542ab0f05">does this work too?</Message>
 </Messages>

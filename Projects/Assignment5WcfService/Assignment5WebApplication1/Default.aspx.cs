@@ -34,6 +34,7 @@ namespace Assignment5WebApplication1
         protected void Timer1_Tick(object sender, EventArgs e)
         {
             LastUpdated.Text = "Last updated at: " + DateTime.Now.ToLongTimeString();
+            recieveMsg_Click(sender, e);
         }
 
         protected void recieveMsg_Click(object sender, EventArgs e)
