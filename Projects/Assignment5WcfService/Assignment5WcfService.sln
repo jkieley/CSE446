@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment5WcfService", "Assignment5WcfService\Assignment5WcfService.csproj", "{F1B6ACA4-B9C7-47C3-8A0F-6E184972447A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment5WebApplication1", "Assignment5WebApplication1\Assignment5WebApplication1.csproj", "{1FEAEC6D-3BF3-462E-9FB0-B381AE26960D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F1B6ACA4-B9C7-47C3-8A0F-6E184972447A} = {F1B6ACA4-B9C7-47C3-8A0F-6E184972447A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

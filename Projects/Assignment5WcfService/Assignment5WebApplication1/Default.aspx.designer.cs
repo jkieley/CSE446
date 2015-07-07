@@ -31,12 +31,21 @@ namespace Assignment5WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText receiverId;
         
         /// <summary>
-        /// content control.
+        /// messageContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText content;
+        protected global::System.Web.UI.WebControls.TextBox messageContent;
+        
+        /// <summary>
+        /// sendMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button sendMsg;
     }
 }

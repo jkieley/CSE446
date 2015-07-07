@@ -9,14 +9,23 @@ namespace Assignment5WebApplication1
 {
     public partial class Index : System.Web.UI.Page
     {
+
+        public string test = uuid();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-
+            String receiverId = Request.Form["receiverId"];
+            String senderId = Request.Form["senderId"];
         }
+
+        protected static string uuid()
+        {
+            return System.Guid.NewGuid().ToString();
+        }
+
     }
 }
