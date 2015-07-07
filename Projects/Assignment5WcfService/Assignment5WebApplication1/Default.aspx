@@ -36,6 +36,7 @@
         <div class="input-group">
             <label>To Whom(ID)?</label>
             <input type="text" id="receiverId" runat="server"/>
+            <input type="hidden" name="senderId" value="<%= this.test %>" />
         </div>
         <div class="input-group">
             <label>Message:</label>
