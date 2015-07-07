@@ -21,6 +21,10 @@
             margin-top: 10px;
         }
 
+        #recieveMsg {
+            margin-left: 10px;
+        }
+
         form {
             width: 600px;
             margin: auto;
@@ -35,7 +39,7 @@
         <h4>Your id is: <%= this.test %></h4>
         <div class="input-group">
             <label>To Whom(ID)?</label>
-            <input type="text" id="receiverId" runat="server"/>
+            <input type="text" name="receiverId" runat="server"/>
             <input type="hidden" name="senderId" value="<%= this.test %>" />
         </div>
         <div class="input-group">
@@ -44,6 +48,27 @@
             <div>
                 <asp:Button Text="Send This Message" runat="server" OnClick="Unnamed1_Click" id="sendMsg"/>
             </div>
+        </div>
+    </div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <asp:Timer ID="Timer1" OnTick="Timer1_Tick" runat="server" Interval="1000" />
+    <div>
+        <div class="input-group">
+            <label>My ID:</label>
+            <input type="hidden" name="receiverId" value="<%= this.test %>" />
+            <asp:Button Text="Recieve my Messages" runat="server" id="recieveMsg"/>
+        </div>
+        <div class="input-group">
+            <label>All messages to me:</label>
+             
+            <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+                </Triggers>
+                <ContentTemplate>
+                    <asp:TextBox ID="TextBox1" TextMode="multiline" Columns="50" Rows="5" runat="server" Text="UpdatePanel1 not refreshed yet."/>
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
     </div>
     </form>

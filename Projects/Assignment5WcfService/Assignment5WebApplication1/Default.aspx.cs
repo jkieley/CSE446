@@ -14,6 +14,7 @@ namespace Assignment5WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
@@ -25,6 +26,11 @@ namespace Assignment5WebApplication1
         protected static string uuid()
         {
             return System.Guid.NewGuid().ToString();
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            TextBox1.Text = "UpdatePanel1 refreshed at: " + DateTime.Now.ToLongTimeString();
         }
 
     }
