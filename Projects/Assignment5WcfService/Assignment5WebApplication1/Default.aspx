@@ -36,7 +36,6 @@
     <form id="form1" runat="server">
     <div>
         <h4>Message Service Test Client</h4>
-        <h4>Your id is: <%= this.test %></h4>
         <div class="input-group">
             <label>To Whom(ID)?</label>
             <input type="text" name="receiverId" runat="server"/>
@@ -53,8 +52,8 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server" />
         <asp:Timer ID="Timer1" OnTick="Timer1_Tick" runat="server" Interval="1000" />
     <div>
+        <h4>Your id is: <%= this.test %></h4>
         <div class="input-group">
-            <label>My ID:</label>
             <input type="hidden" name="receiverId" value="<%= this.test %>" />
             <asp:Button Text="Recieve my Messages" runat="server" id="recieveMsg"/>
         </div>
@@ -66,7 +65,10 @@
                     <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
                 </Triggers>
                 <ContentTemplate>
-                    <asp:TextBox ID="TextBox1" TextMode="multiline" Columns="50" Rows="5" runat="server" Text="UpdatePanel1 not refreshed yet."/>
+                    <div>
+                        <asp:Label id="LastUpdated" Text="Has not been updated" runat="server" />
+                    </div>
+                    <asp:TextBox ID="TextBox1" TextMode="multiline" Columns="50" Rows="5" runat="server"/>
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>

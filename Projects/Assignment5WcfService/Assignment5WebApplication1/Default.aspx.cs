@@ -30,7 +30,7 @@ namespace Assignment5WebApplication1
 
         protected void Timer1_Tick(object sender, EventArgs e)
         {
-            TextBox1.Text = "UpdatePanel1 refreshed at: " + DateTime.Now.ToLongTimeString();
+            LastUpdated.Text = "Last updated at: " + DateTime.Now.ToLongTimeString();
         }
 
     }
