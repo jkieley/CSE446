@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Messages>
-  <Message SenderId="2a1daecf-f6ec-411f-bf02-589f0f3f7ba5" ReceiverId="d321d31f-880b-4418-b68b-b958df98f4bf">test</Message>
-  <Message SenderId="d321d31f-880b-4418-b68b-b958df98f4bf" ReceiverId="2a1daecf-f6ec-411f-bf02-589f0f3f7ba5">test5</Message>
-</Messages>
